@@ -1,12 +1,10 @@
 **.swp
 node_modules
-app/js
 test/unit/js
 test/smoke/js
 test/acceptance/js
 test/acceptance/fixtures/tmp
 compiles
-app.js
 **/*.map
 .DS_Store
 *~
@@ -15,5 +13,4 @@ cache
 db.sqlite
 db.sqlite-wal
 db.sqlite-shm
-config/*
 npm-debug.log
