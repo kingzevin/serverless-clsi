@@ -257,17 +257,18 @@
       "resources": [
         {
           "path": "main.tex",
-          "content": "\\documentclass{article}\n\\usepackage[utf8]{inputenc}\n\\usepackage{graphicx}\n\\graphicspath{ {./} }\n\n\\title{1}\n\\author{1 }\n\\date{April 2020}\n\n\\begin{document}\n\n\\maketitle\n\\input{sections/1}\n\n\\section{Introduction}\nyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyessyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssssss\nsdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfysdfsdfsdfsdf zdxf aser wge sfg rtq sf asdf asdf sadf adf \nesssdfsdfyesssdfsdfye sdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdf\n\n\\includegraphics[scale=0.01]{labixiaoxin}\n\n\\end{document}\n"
+          "content": "\\documentclass{article}\n\\usepackage[utf8]{inputenc}\n\\usepackage{graphicx}\n\\graphicspath{ {./} }\n\n\\title{1}\n\\author{1 }\n\\date{April 2020}\n\n\\begin{document}\n\n\\maketitle\n\\input{sections/1}\n\n\\section{Introduction}\nyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyessyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssssss\nsdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfysdfsdfsdfsdf zdxf aser wge sfg rtq sf asdf asdf sadf adf \nesssdfsdfyesssdfsdfye sdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdf\n\nend{document}\n"
+          // "content": "\\documentclass{article}\n\\usepackage[utf8]{inputenc}\n\\usepackage{graphicx}\n\\graphicspath{ {./} }\n\n\\title{1}\n\\author{1 }\n\\date{April 2020}\n\n\\begin{document}\n\n\\maketitle\n\\input{sections/1}\n\n\\section{Introduction}\nyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyessyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssssss\nsdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfysdfsdfsdfsdf zdxf aser wge sfg rtq sf asdf asdf sadf adf \nesssdfsdfyesssdfsdfye sdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdf\n\n\\includegraphics[scale=0.01]{labixiaoxin}\n\n\\end{document}\n"
         },
         {
           "path": "sections/1.tex",
           "content": "\\section{Design Overview}\n\nWe are witnessing an emerging trend that more Internet."
-        },
-        {
-          "path": "labixiaoxi.jpg",
-          "url": "http://filestore:3009/project/5e9724266a66f10065ea52ae/file/5e9c5aef5214770077909383",
-          "modified": 1587305199073
         }
+        // ,{
+        //   "path": "labixiaoxi.jpg",
+        //   "url": "http://filestore:3009/project/5e9724266a66f10065ea52ae/file/5e9c5aef5214770077909383",
+        //   "modified": 1587305199073
+        // }
       ]
     }
 
