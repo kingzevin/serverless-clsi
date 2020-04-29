@@ -97,6 +97,11 @@
             }
             newFile = _.clone(file);
             _ref2 = [Path.join(compileDir, file.path), Path.join(cacheDir, file.path)], src = _ref2[0], dst = _ref2[1];
+            // zevin: dump files to fs
+            //   we upload the file to filestore instead.
+            //   Path.join(compileDir, file.path)
+            uploadToFilestore(compileDir, file.path, buildId)
+
             return OutputCacheManager._checkFileIsSafe(src, function(err, isSafe) {
               if (err != null) {
                 return cb(err);
@@ -309,5 +314,40 @@
       return callback(null, false);
     }
   };
+
+  function uploadToFilestore(compileDir, fileName, buildId){
+    const projectId = Path.basename(compileDir);
+    const fsPath = Path.join(compileDir, fileName)
+    const readStream = fs.createReadStream(fsPath);
+    readStream.on('open', function() {
+      const filestoreUrl = Settings.apis.filestore? `http://${Settings.apis.filestore.url.host}:${Settings.apis.filestore.url.port}` : 'http://172.25.0.1:3009';
+      const url = `${filestoreUrl}/project/${projectId}/file/output_${buildId}_${fileName}`;
+      // from web, route to 
+      const ONE_MIN_IN_MS = 60 * 1000
+      const FIVE_MINS_IN_MS = ONE_MIN_IN_MS * 5
+      
+      const opts = {
+        method: 'post',
+        uri: url,
+        timeout: FIVE_MINS_IN_MS,
+      };
+      const request = require('request')
+      const writeStream = request(opts)
+      writeStream.on('response', function(response) {
+        if (![200, 201].includes(response.statusCode)) {
+          err = new Error(
+            `non-ok response from filestore for upload: ${
+              response.statusCode
+            }`
+          )
+          logger.warn(
+            { err, statusCode: response.statusCode },
+            'error uploading to filestore'
+          )
+        }
+      }) 
+      readStream.pipe(writeStream)
+    });
+  }
 
 }).call(this);

@@ -34,8 +34,11 @@ module.exports =
 	apis:
 		clsi:
 			url: "http://#{process.env['CLSI_HOST'] or 'localhost'}:3013"
-
-			
+		filesotre:
+			url:
+				host: process.env['FILESTORE_HOST'] or '172.25.0.1'
+				port: 3009
+				
 	smokeTest: process.env["SMOKE_TEST"] or false
 	project_cache_length_ms: 1000 * 60 * 60 * 24
 	parallelFileDownloads: process.env["FILESTORE_PARALLEL_FILE_DOWNLOADS"] or 1

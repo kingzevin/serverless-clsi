@@ -145,6 +145,7 @@
           Metrics.inc("compiles");
           Metrics.inc("compiles-with-image." + tag);
           compileName = getCompileName(request.project_id, request.user_id);
+          // zevin: run compile here
           return LatexRunner.runLatex(compileName, {
             directory: compileDir,
             mainFile: request.rootResourcePath,
@@ -177,6 +178,7 @@
             if (error != null) {
               return callback(error);
             }
+          // zevin: compile succeeded here
             Metrics.inc("compiles-succeeded");
             _ref4 = stats || {};
             for (metric_key in _ref4) {
@@ -211,6 +213,8 @@
               if (error != null) {
                 return callback(error);
               }
+              // zevin: push outputFiles to filestore
+              
               return OutputCacheManager.saveOutputFiles(outputFiles, compileDir, function(error, newOutputFiles) {
                 return callback(null, newOutputFiles);
               });
