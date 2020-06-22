@@ -36,7 +36,7 @@ module.exports =
 			url: "http://#{process.env['CLSI_HOST'] or 'localhost'}:3013"
 		filesotre:
 			url:
-				host: process.env['FILESTORE_HOST'] or '172.25.0.1'
+				host: process.env['FILESTORE_HOST'] or '172.17.0.1'
 				port: 3009
 				
 	smokeTest: process.env["SMOKE_TEST"] or false

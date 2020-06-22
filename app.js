@@ -230,18 +230,10 @@
   exports.main = test;
 
   function test(params = {}) {
-    // params e.g.: {
-    //  url: '/user/5dea50e08912bd02137651c2/check',
-    //  method: 'post',
-    //  words: ["yess", "sharelatex"],
-    //  language: 'en'
-    // }
-
-    const url = params.url || '/project/5e9724266a66f10065ea52ae/compile';
-    // const url = params.url || '/status';
+    const url = params.__ow_path || '/project/5e9724266a66f10065ea52ae/compile';
     const method = params.__ow_method || 'post';
-    // const method = params.__ow_method || 'get';
-    const filestoreHost = Settings.apis.filestore ? Settings.apis.filestore.url.host : "172.25.0.1";
+    const filestoreHost = Settings.apis.filestore ? Settings.apis.filestore.url.host : "172.17.0.1";
+
     params.compile = params.compile || {
       "options": {
         "compiler": "pdflatex",
@@ -274,24 +266,12 @@
       }
     });
 
-    function invoke(url, bodyJSON) {
-      return new Promise((resolve, reject) => {
-        app.runMiddleware(url, bodyJSON, (code, data) => {
-          if (code == 200)
-            resolve({ body: data });
-          else
-            reject({ body: { code, data } })
-        })
-      });
-    }
-
     const { promisify } = require('util')
     const request = require("request")
     const reqPromise = promisify(request[method]);
     return (async () => {
       let result = await reqPromise({
-        // url: `http://${host}:${port}/${url}`,
-        url: `http://localhost:3013${url}`,
+        url: `http://${host}:${port}${url}`,
         json: params
       })
       return result
