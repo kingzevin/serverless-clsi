@@ -65,6 +65,7 @@
           filePath: filePath
         }, "finished downloading file into cache");
       });
+      // zevin: download from url, whose default value is the url of filestore.
       return urlStream.on("response", function(res) {
         var fileStream;
         if (res.statusCode >= 200 && res.statusCode < 300) {
