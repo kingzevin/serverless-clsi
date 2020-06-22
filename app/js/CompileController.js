@@ -99,7 +99,7 @@
                 status: status,
                 error: (error != null ? error.message : void 0) || error,
                 outputFiles: outputFiles.map(function(file) {
-                  const filestoreUrl = Settings.apis.filestore? `http://${Settings.apis.filestore.url.host}:${Settings.apis.filestore.url.port}` : 'http://172.25.0.1:3009';
+                  const filestoreUrl = Settings.apis.filestore? `http://${Settings.apis.filestore.url.host}:${Settings.apis.filestore.url.port}` : 'http://172.17.0.1:3009';
 
                   return {
                     url: ("" + filestoreUrl + "/project/" + request.project_id) + ("/file/output_" + file.build + "_" + file.path),
