@@ -229,7 +229,7 @@
   exports.main = test;
 
   function test(params = {}) {
-    const url = params.__ow_path || '/project/5e9724266a66f10065ea52ae/compile';
+    const url = params.__ow_path || '/project/5ee9ea6bd9085c0007b38bfe/user/5ec7b3d14857fc00a946704b/compile';
     const method = params.__ow_method || 'post';
     const filestoreHost = Settings.apis.filestore ? Settings.apis.filestore.url.host : "172.17.0.1";
     logger.error(params,'zevin\'s log')
