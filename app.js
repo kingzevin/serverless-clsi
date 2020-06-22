@@ -49,7 +49,6 @@
 
   TIMEOUT = 10 * 60 * 1000;
 
-  if (runmiddlewareFlag == false)
     app.use(function (req, res, next) {
       req.setTimeout(TIMEOUT);
       res.setTimeout(TIMEOUT);
