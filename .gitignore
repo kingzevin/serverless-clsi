@@ -8,7 +8,6 @@ compiles
 **/*.map
 .DS_Store
 *~
-cache
 .vagrant
 db.sqlite
 db.sqlite-wal

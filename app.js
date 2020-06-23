@@ -231,39 +231,33 @@
   function test(params = {}) {
     const url = params.__ow_path || '/project/5ee9ea6bd9085c0007b38bfe/user/5ec7b3d14857fc00a946704b/compile';
     const method = params.__ow_method || 'post';
-    const filestoreHost = Settings.apis.filestore ? Settings.apis.filestore.url.host : "172.17.0.1";
-    logger.error(params,'zevin\'s log')
-    params.compile = params.compile || {
-      "options": {
-        "compiler": "pdflatex",
-        "timeout": 180,
-        "draft": false,
-        "check": "silent",
-        "syncType": "full",
-      },
-      "rootResourcePath": "main.tex",
-      "resources": [
-        {
-          "path": "main.tex",
-          "content": "\\documentclass{article}\n\\usepackage[utf8]{inputenc}\n\\usepackage{graphicx}\n\\graphicspath{ {./} }\n\n\\title{1}\n\\author{1 }\n\\date{April 2020}\n\n\\begin{document}\n\n\\maketitle\n\\input{sections/1}\n\n\\section{Introduction}\nyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyessyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssssss\nsdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfysdfsdfsdfsdf zdxf aser wge sfg rtq sf asdf asdf sadf adf \nesssdfsdfyesssdfsdfye sdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdfyesssdfsdf\n\n\\end{document}\n"
-        },
-        {
-          "path": "sections/1.tex",
-          "content": "\\section{Design Overview}\n\nWe are witnessing an emerging trend that more Internet."
-        }
-        // ,{
-        //   "path": "labixiaoxi.jpg",
-        //   "url": "http://filestore:3009/project/5e9724266a66f10065ea52ae/file/5e9c5aef5214770077909383",
-        //   "modified": 1587305199073
-        // }
-      ]
-    }
-
-    params.compile.resources.forEach(element => {
-      if (element.url) {
-        element.url = element.url.replace("filestore", filestoreHost);
-      }
-    });
+    // const filestoreHost = Settings.apis.filestore ? Settings.apis.filestore.url.host : "172.17.0.1";
+    // logger.error(params,'zevin\'s log')
+    // params.compile = params.compile || {
+    //   "options": {
+    //     "compiler": "pdflatex",
+    //     "timeout": 180,
+    //     "draft": false,
+    //     "check": "silent",
+    //     "syncType": "full",
+    //   },
+    //   "rootResourcePath": "main.tex",
+    //   "resources": [
+    //     {
+    //       "path": "main.tex",
+    //       "content": "\\documentclass{article}\n\\usepackage[utf8]{inputenc}\n\\usepackage{graphicx}\n\\graphicspath{ {./} }\n\n\\title{1}\n\\author{1 }\n\\date{April 2020}\n\n\\begin{document}\n\n\\maketitle\n\\input{sections/1}\n\n\\section{Introduction}\nyes\n\n\\end{document}\n"
+    //     },
+    //     {
+    //       "path": "sections/1.tex",
+    //       "content": "\\section{Design Overview}\n\nWe are witnessing an emerging trend that more Internet."
+    //     }
+    //     // ,{
+    //     //   "path": "labixiaoxi.jpg",
+    //     //   "url": "http://filestore:3009/project/5e9724266a66f10065ea52ae/file/5e9c5aef5214770077909383",
+    //     //   "modified": 1587305199073
+    //     // }
+    //   ]
+    // }
 
     const { promisify } = require('util')
     const request = require("request")
