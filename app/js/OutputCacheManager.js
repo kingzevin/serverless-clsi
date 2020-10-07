@@ -320,9 +320,8 @@
     const fsPath = Path.join(compileDir, fileName)
     const readStream = fs.createReadStream(fsPath);
     readStream.on('open', function() {
-      const filestoreUrl = Settings.apis.filestore? `http://${Settings.apis.filestore.url.host}:${Settings.apis.filestore.url.port}` : 'http://172.17.0.1:3009';
+      const filestoreUrl = `http://${Settings.apis.filestore.url.host}:${Settings.apis.filestore.url.port}`
       const url = `${filestoreUrl}/project/${projectId}/file/output_${buildId}_${fileName}`;
-      // from web, route to 
       const ONE_MIN_IN_MS = 60 * 1000
       const FIVE_MINS_IN_MS = ONE_MIN_IN_MS * 5
       

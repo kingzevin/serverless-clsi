@@ -94,16 +94,15 @@
             }
             timer.done();
             return res.status(code || 200).send({
-              // zevin: files info responsed here
               compile: {
                 status: status,
                 error: (error != null ? error.message : void 0) || error,
                 outputFiles: outputFiles.map(function(file) {
-                  const filestoreUrl = Settings.apis.filestore? `http://${Settings.apis.filestore.url.host}:${Settings.apis.filestore.url.port}` : 'http://172.17.0.1:3009';
+                  const filestoreUrl = `http://${Settings.apis.filestore.url.host}:${Settings.apis.filestore.url.port}`;
+                  // const filestoreUrl = Settings.apis.filestore? `http://${Settings.apis.filestore.url.host}:${Settings.apis.filestore.url.port}` : 'http://172.17.0.1:3009';
 
                   return {
                     url: ("" + filestoreUrl + "/project/" + request.project_id) + ("/file/output_" + file.build + "_" + file.path),
-                    // url: ("" + Settings.apis.clsi.url + "/project/" + request.project_id) + (request.user_id != null ? "/user/" + request.user_id : "") + (file.build != null ? "/build/" + file.build : "") + ("/output/" + file.path),
                     path: file.path,
                     type: file.type,
                     build: file.build

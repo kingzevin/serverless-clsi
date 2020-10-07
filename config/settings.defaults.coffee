@@ -24,7 +24,7 @@ module.exports =
 
 	internal:
 		clsi:
-			port: 3013
+			port: 2013
 			host: process.env["LISTEN_ADDRESS"] or "localhost"
 			
 		load_balancer_agent:
@@ -34,9 +34,9 @@ module.exports =
 	apis:
 		clsi:
 			url: "http://#{process.env['CLSI_HOST'] or 'localhost'}:3013"
-		filesotre:
+		filestore:
 			url:
-				host: process.env['FILESTORE_HOST'] or '172.17.0.1'
+				host: process.env['FILESTORE_HOST'] or 'localhost'
 				port: 3009
 				
 	smokeTest: process.env["SMOKE_TEST"] or false
