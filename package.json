@@ -22,7 +22,7 @@
   },
   "author": "James Allen <james@sharelatex.com>",
   "dependencies": {
-    "async": "0.2.9",
+    "async": "2.6.4",
     "body-parser": "^1.2.0",
     "dockerode": "^2.5.3",
     "express": "^4.2.0",
